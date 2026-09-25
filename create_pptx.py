@@ -347,9 +347,9 @@ def build_presentation():
     add_header(slide8, 8, "Scaling PlateRelay Pan-India", "🔮 FUTURE SCOPE & ROADMAP")
     
     futures = [
-        ("🤖 AI Demand Forecasting", "Predicting mess & restaurant surplus quantities before cooking starts using historical consumption patterns."),
-        ("🧊 IoT Smart Lockers", "Temperature-controlled smart lockers at pickup spots for 24/7 volunteer pickup without donor waiting."),
-        ("🏢 Municipal & FSSAI Scaling", "Partnering with FSSAI (Save Food Share Food) and 50+ municipal corporations for nationwide deployment.")
+        ("🏆 Volunteer Karma Points & Rewards", "• Concept: Volunteer runners earn PlateRelay Karma Points for every successful food delivery.\n\n• Why it helps: Volunteers redeem points for free fuel vouchers, public transport passes, or restaurant discounts."),
+        ("🛵 Delivery Partner Fleet Integration", "• Concept: Utilizing existing delivery drivers (Swiggy/Zomato/Dunzo) during their slow off-peak hours (3 PM – 6 PM).\n\n• Why it helps: Provides zero-cost, reliable transportation for bulk surplus meals to shelters."),
+        ("🤖 AI Surplus Demand Predictor", "• Concept: Machine Learning models analyzing past restaurant sales, weather & local event trends.\n\n• Why it helps: Predicts surplus food before cooking starts, pre-alerting NGOs in advance.")
     ]
     for i, (ftitle, fdesc) in enumerate(futures):
         card = slide8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8 + i * 3.9), Inches(1.8), Inches(3.7), Inches(5.0))
@@ -361,13 +361,13 @@ def build_presentation():
         tf.word_wrap = True
         p1 = tf.paragraphs[0]
         p1.text = ftitle
-        p1.font.size = Pt(16)
+        p1.font.size = Pt(15)
         p1.font.bold = True
         p1.font.color.rgb = GOLD
         
         p2 = tf.add_paragraph()
         p2.text = f"\n{fdesc}"
-        p2.font.size = Pt(13)
+        p2.font.size = Pt(12)
         p2.font.color.rgb = WHITE
 
     # Save Presentation Output
