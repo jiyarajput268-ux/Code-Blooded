@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlateRelay - Hackathon Presentation Deck (AmiHacks 1.0)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #581C25; }
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .slide-content { display: none; }
+    .slide-content.active { display: flex; }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col justify-between p-4 sm:p-8 select-none">
+
+  <!-- Top Bar / Header -->
+  <header class="flex items-center justify-between border-b border-white/20 pb-4 max-w-7xl mx-auto w-full">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-full bg-[#FDFBF7] text-[#581C25] flex items-center justify-center font-bold text-xl shadow-lg">
+        🍲
+      </div>
+      <div>
+        <h1 class="font-serif text-xl font-bold tracking-wide text-[#FDFBF7]">PlateRelay</h1>
+        <p class="text-[10px] text-white/70 uppercase tracking-widest font-semibold">AMIHACKS 1.0 • NGO & INDUSTRY TRACK</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center space-x-3">
+      <a href="/PlateRelay_Hackathon_Presentation.pptx" download="PlateRelay_Hackathon_Presentation.pptx" class="bg-[#F4E8C1] hover:bg-white text-[#581C25] font-extrabold px-4 py-1.5 rounded-full text-xs shadow-md transition-all flex items-center space-x-1">
+        <span>📥 Download PPT (.pptx)</span>
+      </a>
+      <span class="text-xs bg-white/10 px-3 py-1.5 rounded-full border border-white/20 font-mono text-[#F4E8C1]" id="slide-number">
+        Slide 1 of 8
+      </span>
+      <span class="text-xs bg-emerald-600 text-white font-bold px-3 py-1 rounded-full shadow-sm">
+        HACKATHON PITCH
+      </span>
+    </div>
+  </header>
+
+  <!-- Main Slide Canvas Container -->
+  <main class="max-w-7xl mx-auto w-full flex-1 my-6 flex flex-col justify-center">
+
+    <!-- SLIDE 1: TITLE & OVERVIEW -->
+    <div class="slide-content active flex-col justify-center space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-[#FDFBF7] text-[#581C25] rounded-full text-xs font-extrabold tracking-widest uppercase shadow-md">
+        🏆 HACKATHON PRESENTATION DECK (6.2 DELIVERABLE)
+      </div>
+      
+      <h2 class="font-serif text-4xl sm:text-6xl font-extrabold text-[#FDFBF7] leading-tight">
+        PlateRelay: "Surplus-to-Shelter"<br>
+        <span class="text-[#F4E8C1]">Real-Time Food Rescue Routing</span>
+      </h2>
+      
+      <p class="text-base sm:text-lg text-white/90 max-w-3xl leading-relaxed">
+        An intelligent, time-perishability cascade platform that prevents urban food waste by connecting commercial donors, cost-conscious claimers, and verified NGO shelters using dynamic routing algorithms and dual-OTP verification.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-xs">
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="text-[#F4E8C1] font-bold text-base sm:text-xl">3-Stage</p>
+          <p class="text-white/70 text-[11px]">Cascade Rescue Engine</p>
+        </div>
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="text-[#F4E8C1] font-bold text-base sm:text-xl">78 / 100</p>
+          <p class="text-white/70 text-[11px]">Weighted NGO Match Score</p>
+        </div>
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="text-[#F4E8C1] font-bold text-base sm:text-xl">Dual OTP</p>
+          <p class="text-white/70 text-[11px]">Chain-of-Custody Handoff</p>
+        </div>
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="text-[#F4E8C1] font-bold text-base sm:text-xl">Dual DB</p>
+          <p class="text-white/70 text-[11px]">SQLite + Mongo Atlas Sync</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: PROBLEM STATEMENT -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-rose-900/80 text-rose-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        🔴 PROBLEM STATEMENT
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[#FDFBF7]">
+        The Urban Food Paradox: Waste vs. Hunger
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-3">
+          <div class="text-3xl">🚮</div>
+          <h3 class="font-serif text-xl font-bold text-[#F4E8C1]">67 Million Tons Wasted</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            India loses ₹92,000 Crores worth of edible food annually. Commercial kitchens, mess halls, and bakeries dump fresh surplus daily.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-3">
+          <div class="text-3xl">⏳</div>
+          <h3 class="font-serif text-xl font-bold text-[#F4E8C1]">The Perishability Clock</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Cooked food spoils within 2–4 hours. Traditional phone-call networks to NGOs fail because food expires before volunteers arrive.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-3">
+          <div class="text-3xl">🚫</div>
+          <h3 class="font-serif text-xl font-bold text-[#F4E8C1]">No Unified Logistics</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Zero real-time platforms exist to automatically match commercial donors with nearby verified shelters, langars, and volunteer runners.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: PROPOSED SOLUTION -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-emerald-900/80 text-emerald-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        💡 PROPOSED SOLUTION
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[#FDFBF7]">
+        PlateRelay: Real-Time 3-Stage Cascade System
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div class="p-6 bg-white/10 rounded-2xl border border-amber-500/40 space-y-3 relative overflow-hidden">
+          <span class="text-xs font-bold bg-amber-500 text-black px-2.5 py-1 rounded">STAGE 1</span>
+          <h3 class="font-serif text-xl font-bold text-[#FDFBF7]">Rescue Deal (50-70% Off)</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Initial commercial resale window allowing donors to recover food costs while food is super fresh.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-emerald-500/40 space-y-3 relative overflow-hidden">
+          <span class="text-xs font-bold bg-emerald-500 text-black px-2.5 py-1 rounded">STAGE 2</span>
+          <h3 class="font-serif text-xl font-bold text-[#FDFBF7]">Free Share Feed</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Zero-cost community sharing feed activated automatically as the safe consumption window decreases.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-rose-500/40 space-y-3 relative overflow-hidden">
+          <span class="text-xs font-bold bg-rose-500 text-white px-2.5 py-1 rounded">STAGE 3</span>
+          <h3 class="font-serif text-xl font-bold text-[#FDFBF7]">NGO Bulk Rescue</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Automated direct routing to verified shelters and langars for bulk portions (&ge; 15 portions).
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-between text-xs text-white/90">
+        <span class="font-bold text-[#F4E8C1]">⏱️ Safety Countdown Clock Ring:</span>
+        <span>Displays live safe-for timer (e.g. 3h 45m) ensuring zero spoiled food distribution.</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: KEY FEATURES -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-blue-900/80 text-blue-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        ✨ KEY FEATURES & INNOVATION
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#FDFBF7]">
+        Intelligent Modules & Value Proposition
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div class="p-5 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="flex items-center space-x-2 text-[#F4E8C1] font-bold text-sm">
+            <span>🧠</span>
+            <span>Automated Weighted NGO Matcher</span>
+          </div>
+          <p class="text-white/80 leading-relaxed">
+            Calculates dynamic match scores (78/100) using <strong>Distance (40%) + Capacity (25%) + Urgency (20%) + Preference (15%)</strong>.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="flex items-center space-x-2 text-[#F4E8C1] font-bold text-sm">
+            <span>📷</span>
+            <span>Smart Dish Matcher & Photo Picker</span>
+          </div>
+          <p class="text-white/80 leading-relaxed">
+            Auto-detects dish titles (Momos, Paneer, Biryani, Chole Bhature, Gulab Jamun, Dal Makhani) with direct device file upload support.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="flex items-center space-x-2 text-[#F4E8C1] font-bold text-sm">
+            <span>🔒</span>
+            <span>Dual-OTP Handoff Security</span>
+          </div>
+          <p class="text-white/80 leading-relaxed">
+            Pickup OTP (<code>#4821</code>) and Delivery OTP (<code>#9374</code>) verify volunteer runner chain-of-custody to eliminate fraud.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="flex items-center space-x-2 text-[#F4E8C1] font-bold text-sm">
+            <span>🗺️</span>
+            <span>OpenStreetMap Leaflet Integration</span>
+          </div>
+          <p class="text-white/80 leading-relaxed">
+            Live interactive map with custom Leaflet markers for Temples, Langars, and Verified Community Shelters.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: SYSTEM ARCHITECTURE -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-purple-900/80 text-purple-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        🏗️ SYSTEM ARCHITECTURE
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#FDFBF7]">
+        Architecture & Tech Stack Breakdown
+      </h2>
+
+      <div class="bg-black/40 p-6 rounded-2xl border border-white/15 text-xs font-mono text-[#F4E8C1] leading-relaxed overflow-x-auto">
+        [ Donor Input (React) ] ──► [ Express REST API (Port 5001) ] ──► [ Engine Logic (Cascade / Safe Window) ]
+                                             │
+                                             ▼
+                                ┌──────────────────────────┐
+                                │ Dual-Database Architecture│
+                                │ • SQLite (database.db)   │
+                                │ • Mongo Atlas Cloud Sync │
+                                └──────────────────────────┘
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="font-bold text-[#F4E8C1] mb-1">Frontend Layer</p>
+          <p class="text-white/70">React.js, Vite, Tailwind CSS, Lucide Icons, Leaflet Maps</p>
+        </div>
+
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="font-bold text-[#F4E8C1] mb-1">Backend & Engine</p>
+          <p class="text-white/70">Node.js, Express API, Haversine Distance, Weighted Matcher</p>
+        </div>
+
+        <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+          <p class="font-bold text-[#F4E8C1] mb-1">Database & Storage</p>
+          <p class="text-white/70">SQLite (Zero-setup local) + MongoDB Atlas Cloud Cluster</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: DEMO SCREENSHOTS -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-amber-900/80 text-amber-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        📸 DEMO SCREENSHOTS & GALLERY
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#FDFBF7]">
+        Live Platform Workflows
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+        <div class="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
+          <p class="font-bold text-[#F4E8C1]">1. Browse Deals & Rescue Feed</p>
+          <img src="/dal_makhani.png" alt="Dal Makhani" class="w-full h-32 object-cover rounded-xl border border-white/20">
+          <p class="text-white/70 text-[11px]">Shows Stage badges, safe-for timers, and exact dish assets like Dal Makhani.</p>
+        </div>
+
+        <div class="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
+          <p class="font-bold text-[#F4E8C1]">2. Chole Bhature Rescue</p>
+          <img src="/chole_bhature.png" alt="Chole Bhature" class="w-full h-32 object-cover rounded-xl border border-white/20">
+          <p class="text-white/70 text-[11px]">Fluffy Bhaturas & Chole platter matched automatically to user input.</p>
+        </div>
+
+        <div class="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
+          <p class="font-bold text-[#F4E8C1]">3. Gulab Jamun & Sweets</p>
+          <img src="/gulab_jamun.png" alt="Gulab Jamun" class="w-full h-32 object-cover rounded-xl border border-white/20">
+          <p class="text-white/70 text-[11px]">Authentic sweet syrup Gulab Jamun with instant donor handoff.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: TECHNICAL IMPLEMENTATION & IMPACT -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-teal-900/80 text-teal-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        📊 TECHNICAL IMPLEMENTATION & IMPACT
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#FDFBF7]">
+        Simulated Clock & Impact Analytics
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-3">
+          <h3 class="font-serif text-xl font-bold text-[#F4E8C1]">⏱️ Demo Clock Simulator</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Built-in simulated time controller allowing hackathon judges to fast-forward hours and watch listings transition dynamically across Stage 1 &rarr; Stage 2 &rarr; Stage 3 in real-time.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-3">
+          <h3 class="font-serif text-xl font-bold text-[#F4E8C1]">🌱 Environmental CO₂e Formula</h3>
+          <div class="p-3 bg-black/40 rounded-xl font-mono text-emerald-400 text-xs">
+            CO₂e Saved (kg) = Food Saved (kg) × 2.5
+          </div>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Converts rescued food weight into live carbon footprint savings displayed on the Impact Receipt.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: FUTURE SCOPE -->
+    <div class="slide-content flex-col space-y-6 bg-[#4A1521] p-8 sm:p-12 rounded-3xl border-2 border-[#F4E8C1]/30 shadow-2xl">
+      <div class="inline-block px-4 py-1.5 bg-indigo-900/80 text-indigo-200 rounded-full text-xs font-bold tracking-widest uppercase">
+        🔮 FUTURE SCOPE & ROADMAP
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#FDFBF7]">
+        Scaling PlateRelay Pan-India
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="text-3xl">🤖</div>
+          <h3 class="font-serif text-lg font-bold text-[#F4E8C1]">AI Demand Forecasting</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Predicting mess/restaurant surplus quantities before cooking starts using historical consumption patterns.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="text-3xl">🧊</div>
+          <h3 class="font-serif text-lg font-bold text-[#F4E8C1]">IoT Smart Lockers</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Temperature-controlled smart lockers at pickup spots for 24/7 volunteer pickup without donor waiting.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/15 space-y-2">
+          <div class="text-3xl">🏢</div>
+          <h3 class="font-serif text-lg font-bold text-[#F4E8C1]">Municipal Scaling</h3>
+          <p class="text-xs text-white/80 leading-relaxed">
+            Partnering with FSSAI (Save Food Share Food) and 50+ municipal corporations for nationwide deployment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Navigation Bar & Controls -->
+  <footer class="max-w-7xl mx-auto w-full flex items-center justify-between border-t border-white/20 pt-4">
+    <button id="prev-btn" onclick="prevSlide()" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-bold uppercase tracking-wider flex items-center space-x-2 transition-all opacity-50 cursor-not-allowed" disabled>
+      <span>← Previous</span>
+    </button>
+
+    <!-- Slide Indicators -->
+    <div class="flex items-center space-x-2" id="slide-dots">
+      <!-- Generated via JS -->
+    </div>
+
+    <button id="next-btn" onclick="nextSlide()" class="px-6 py-2.5 bg-[#FDFBF7] hover:bg-white text-[#581C25] rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center space-x-2 shadow-lg transition-all">
+      <span>Next →</span>
+    </button>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-content');
+    const totalSlides = slides.length;
+    const slideNumberEl = document.getElementById('slide-number');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const slideDotsEl = document.getElementById('slide-dots');
+
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = `w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${i === 0 ? 'bg-[#F4E8C1] w-6' : 'bg-white/30'}`;
+      dot.onclick = () => goToSlide(i);
+      slideDotsEl.appendChild(dot);
+    }
+
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      slideNumberEl.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
+
+      const dots = slideDotsEl.children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i === currentSlide) {
+          dots[i].className = 'w-6 h-2.5 rounded-full bg-[#F4E8C1] transition-all cursor-pointer';
+        } else {
+          dots[i].className = 'w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer';
+        }
+      }
+
+      if (currentSlide === 0) {
+        prevBtn.disabled = true;
+        prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        prevBtn.disabled = false;
+        prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      }
+
+      if (currentSlide === totalSlides - 1) {
+        nextBtn.textContent = 'Finish Pitch 🏆';
+      } else {
+        nextBtn.textContent = 'Next →';
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlides();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    updateSlides();
+  </script>
+</body>
+</html>

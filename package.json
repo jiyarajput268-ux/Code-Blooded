@@ -1,0 +1,11 @@
+{
+  "name": "plate-relay-root",
+  "version": "1.0.0",
+  "description": "PlateRelay MERN Stack Application",
+  "scripts": {
+    "start:server": "cd server && node index.js",
+    "start:client": "cd client && npx vite --port 5173 --host",
+    "seed": "cd server && node seed.js",
+    "seed:mongo": "cd server && node seed-mongo.js"
+  }
+}
