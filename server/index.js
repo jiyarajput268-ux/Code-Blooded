@@ -201,7 +201,7 @@ app.post('/api/listings', (req, res) => {
     pickup_lat, pickup_lng, donate_only
   } = req.body;
 
-  const now = new Date();
+  const now = new Date(getSimulatedTimeMs());
   const posted_at = now.toISOString();
   const ready_at = posted_at;
   const safe_until = calcSafeUntil(food_type || 'Cooked Meals', ready_at);
@@ -411,6 +411,10 @@ app.get('/api/dashboard/stats', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`PlateRelay Backend Express API running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`PlateRelay Backend Express API running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
